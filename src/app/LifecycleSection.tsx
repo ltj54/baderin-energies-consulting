@@ -41,10 +41,10 @@ const stages: Stage[] = [
   },
   {
     name: "EPCI",
-    detail: "Engineering, purchasing, construction and installation.",
-    plainTitle: "Executing the project",
-    explanation: "EPCI stands for Engineering, Procurement, Construction and Installation. It brings together the detailed engineering, purchasing of equipment and materials, construction, and installation needed to deliver the solution.",
-    questions: ["What needs to be engineered and purchased?", "How will the work be built and installed?", "How are the different activities coordinated?"],
+    detail: "Consultancy and coordination support within the EPCI phase.",
+    plainTitle: "Supporting work during EPCI",
+    explanation: "EPCI stands for Engineering, Procurement, Construction and Installation. On this site, EPCI describes a project phase in which the consultancy may provide technical follow-up, coordination or project management support. It does not mean that the sole proprietorship undertakes a complete EPCI contract.",
+    questions: ["Which activities require technical follow-up?", "Which interfaces need coordination?", "How are decisions and progress being managed?"],
   },
   {
     name: "Project management",
@@ -58,7 +58,7 @@ const stages: Stage[] = [
 const guideTerms = [
   { name: "Pre-FEED", detail: "Work done before detailed front-end engineering, used to compare and prepare the main options." },
   { name: "FEED", detail: "Front-End Engineering Design — the stage where the selected technical solution is defined more clearly." },
-  { name: "EPCI", detail: "Engineering, Procurement, Construction and Installation — taking a design through purchasing and physical delivery." },
+  { name: "EPCI", detail: "Engineering, Procurement, Construction and Installation — here referring to consultancy support within that project phase, not a complete EPCI contract." },
 ];
 
 export default function LifecycleSection() {
@@ -92,10 +92,10 @@ export default function LifecycleSection() {
   return (
     <section className="lifecycle" id="lifecycle" aria-labelledby="lifecycle-title">
       <div className="lifecycle-heading">
-        <div><p className="section-label">PROJECT LIFECYCLE</p><h2 id="lifecycle-title">What do the project stages mean?</h2></div>
-        <p>You do not need to know the industry abbreviations. Here is the process in everyday language.</p>
+        <div><p className="section-label">PROJECT LIFECYCLE</p><h2 id="lifecycle-title">Support across project phases.</h2></div>
+        <p>Technical consultancy, coordination and project management support can be provided across the stages below.</p>
       </div>
-      <p className="stage-instruction">Select a stage for more information.</p>
+      <p className="stage-instruction">Select a stage to view its scope and typical project questions.</p>
       <ol className="phase-list">
         {stages.slice(0, 5).map((stage) => (
           <li key={stage.name}>

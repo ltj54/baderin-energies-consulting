@@ -51,7 +51,7 @@ export default function Home() {
           <span>Language</span>
           <select defaultValue="en" disabled aria-label="Language selection, available later" title="More languages will be available later">
             <option value="en">English</option>
-            <option value="no">Norsk</option>
+            <option value="no">Norwegian</option>
           </select>
         </label>
       </div>
@@ -61,16 +61,16 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span className="eyebrow-line" /> ENGINEERING · ENERGY · PROJECTS</p>
           <h1 id="hero-title">Oil, gas and energy <em>project consultancy.</em></h1>
-          <p className="hero-description">Services cover concept development, technical studies, pre-FEED, FEED, EPCI and project management.</p>
+          <p className="hero-description">Baderin Energies Consulting provides technical consultancy, project coordination and project management support for oil, gas and energy projects.</p>
           <Link className="primary-link" href={{ pathname: "/", hash: "lifecycle" }}>View the project stages <Arrow diagonal /></Link>
         </div>
         <div className="hero-note">
           <p className="note-kicker">HOW PROJECT WORK DEVELOPS</p>
-          <p className="note-quote">Project work moves from defining the need, through technical development, to delivery.</p>
+          <p className="note-quote">Support can be provided from early project definition through engineering and execution phases.</p>
           <ul aria-label="Project development">
             <li><div><strong>Understand</strong><p>Define the need, objectives and constraints.</p></div></li>
             <li><div><strong>Develop</strong><p>Compare options and define the technical solution.</p></div></li>
-            <li><div><strong>Deliver</strong><p>Prepare and carry out the work.</p></div></li>
+            <li><div><strong>Support delivery</strong><p>Coordinate decisions, interfaces and project activities.</p></div></li>
           </ul>
         </div>
       </section>
@@ -78,8 +78,8 @@ export default function Home() {
       <section className="statement" id="scope" aria-labelledby="scope-title">
         <div className="section-label">WHAT THE WORK COVERS</div>
         <div className="statement-content">
-          <h2 id="scope-title">Project work across definition, engineering and execution.</h2>
-          <p>The scope includes early project definition, option studies, development of the technical basis, preparation for execution and coordination across the project stages.</p>
+          <h2 id="scope-title">Technical consultancy and project coordination.</h2>
+          <p>Support may include early project definition, studies of technical options, development of the technical basis, execution planning and coordination across project phases. During engineering and EPCI, the role is advisory or coordinative and may include project management support.</p>
         </div>
       </section>
 
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="about-rail"><span>ABOUT THE BUSINESS</span><span className="rail-mark" aria-hidden="true">B / E</span></div>
         <div className="about-content">
           <h2 id="about-title">Baderin Energies Consulting</h2>
-          <p className="about-lead">Baderin Energies Consulting is a small, independent engineering consultancy based in Randaberg, Norway. The business supports oil, gas and energy project work — from understanding an early idea to developing the technical basis for delivery.</p>
+          <p className="about-lead">Baderin Energies Consulting is an independent technical consultancy based in Randaberg, Norway. The business provides consultancy and project management support for oil, gas and energy project work.</p>
           <dl className="business-details">
             {businessDetails.map((detail) => <div key={detail.label}><dt>{detail.label}</dt><dd>{detail.value}</dd></div>)}
           </dl>
@@ -97,7 +97,7 @@ export default function Home() {
             <div><span>Registered proprietor</span><strong>Adetoyese Ifedayo Baderin</strong></div>
             <address><span>Business address</span><strong>Skiftesvikveien 25<br />4072 Randaberg, Norway</strong></address>
           </div>
-          <p className="registry-note">Registered in the Norwegian Register of Legal Entities (Enhetsregisteret).</p>
+          <p className="registry-note">Registered in the Norwegian Register of Legal Entities.</p>
         </div>
       </section>
 
