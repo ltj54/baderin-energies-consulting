@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Baderin Energies Consulting – concept preview",
-  description: "Norwegian engineering and technical consultancy supporting oil, gas and energy projects across the project lifecycle.",
+  description: "Preliminary profile for an independent technical consultancy supporting oil, gas and energy project work.",
   robots: { index: false, follow: false },
 };
 
