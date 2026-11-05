@@ -101,17 +101,7 @@ main > section { scroll-margin-top: 104px; }
 .about-rail { display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .14em; }
 .rail-mark { color: #aebbb8; font-size: 2.6rem; letter-spacing: -.08em; }
 .about p { max-width: 720px; color: var(--muted); line-height: 1.75; }
-.about .about-lead { margin-bottom: 42px; }
-.business-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--line); }
-.business-details > div { min-height: 110px; padding: 20px 22px 20px 0; border-bottom: 1px solid var(--line); }
-.business-details > div:nth-child(odd) { border-right: 1px solid var(--line); }
-.business-details > div:nth-child(even) { padding-left: 22px; }
-.business-details dt, .registered-office span { margin-bottom: 9px; color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: .65rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-.business-details dd { margin: 0; font-size: .94rem; font-weight: 600; line-height: 1.55; }
-.registered-office { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; padding-top: 28px; }
-.registered-office > div, .registered-office address { display: flex; flex-direction: column; font-style: normal; }
-.registered-office strong { font-size: .9rem; line-height: 1.6; }
-.about .registry-note { max-width: none; margin: 30px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-family: "IBM Plex Mono", monospace; font-size: .68rem; letter-spacing: .04em; }
+.about .about-lead { margin-bottom: 0; }
 
 .contact { display: grid; grid-template-columns: .9fr 1fr; gap: 7vw; max-width: 1500px; margin: auto; padding: 95px max(4vw, 28px); background: #d8e0dd; }
 .contact-intro > p:not(.section-label) { max-width: 450px; color: var(--muted); line-height: 1.7; }
@@ -134,7 +124,6 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
   .site-header { align-items: flex-start; flex-direction: column; gap: 14px; padding: 13px 20px; }.header-actions { align-items: stretch; width: 100%; }.site-header nav { width: 100%; justify-content: space-between; gap: 9px; font-size: .74rem; }.language-select { align-self: flex-end; }
   .hero, .statement, .about, .contact { grid-template-columns: 1fr; padding-left: 20px; padding-right: 20px; }.hero { padding-top: 64px; gap: 46px; }.hero h1 { font-size: clamp(2.7rem, 10vw, 4rem); }.hero-note { padding: 28px 24px; }
   .statement, .about, .contact { gap: 24px; padding-block: 68px; }.statement .section-label { margin: 0; }.about-rail { min-height: auto; flex-direction: row; }
-  .business-details, .registered-office { grid-template-columns: 1fr; }.business-details > div:nth-child(odd) { border-right: 0; }.business-details > div:nth-child(even) { padding-left: 0; }.registered-office { gap: 22px; }
   .lifecycle { padding: 70px 20px; }.stage-instruction { margin-bottom: -18px; }.phase-list { grid-template-columns: 1fr; margin-top: 36px; }.phase-list li { min-height: 145px; border-left: 1px solid #aebdb9; border-top: 1px solid #aebdb9; }.phase-list li:first-child { border-top: 0; }.phase-list li:nth-child(4) { border-left: 1px solid #aebdb9; }.phase-list button { min-height: 145px; padding: 19px; }.phase-arrow { top: 16px; }.phase-list h3 { margin-top: 12px; }.phase-detail { font-size: .8rem; }.management-rule { display: none; }.management-line { align-items: flex-start; flex-wrap: wrap; }.management-more { width: 100%; padding-left: 28px; }.stage-dialog { padding: 54px 24px 28px; }
   footer { flex-direction: column; padding-inline: 20px; }
 }

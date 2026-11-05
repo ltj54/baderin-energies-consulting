@@ -64,7 +64,6 @@ const guideTerms = [
 export default function LifecycleSection() {
   const [selected, setSelected] = useState<Stage | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -73,14 +72,39 @@ export default function LifecycleSection() {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    const previousOverflow = document.body.style.overflow;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const previousBodyStyles = {
+      overflow: document.body.style.overflow,
+      position: document.body.style.position,
+      top: document.body.style.top,
+      left: document.body.style.left,
+      right: document.body.style.right,
+      width: document.body.style.width,
+    };
+
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = `-${scrollX}px`;
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
     if (!dialog.open) dialog.showModal();
-    closeButtonRef.current?.focus();
+
     return () => {
-      document.body.style.overflow = previousOverflow;
       if (dialog.open) dialog.close();
-      triggerRef.current?.focus();
+
+      const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = "auto";
+      document.body.style.overflow = previousBodyStyles.overflow;
+      document.body.style.position = previousBodyStyles.position;
+      document.body.style.top = previousBodyStyles.top;
+      document.body.style.left = previousBodyStyles.left;
+      document.body.style.right = previousBodyStyles.right;
+      document.body.style.width = previousBodyStyles.width;
+      window.scrollTo(scrollX, scrollY);
+      triggerRef.current?.focus({ preventScroll: true });
+      document.documentElement.style.scrollBehavior = previousScrollBehavior;
     };
   }, [selected]);
 
@@ -113,14 +137,14 @@ export default function LifecycleSection() {
       </div>
       <button className="management-line" type="button" onClick={(event) => openStage(stages[5], event.currentTarget)} aria-haspopup="dialog">
         <span className="management-dot" />
-        <span className="management-copy"><strong>Project management</strong><span>Coordinating responsibilities, decisions, schedule and communication.</span></span>
+        <span className="management-copy"><strong>Project management</strong></span>
         <span className="management-rule" />
-        <span className="management-more">Read explanation →</span>
+        <span className="management-more">View details →</span>
       </button>
 
       {selected && (
-        <dialog ref={dialogRef} className="stage-dialog" aria-labelledby="stage-dialog-title" onCancel={(event) => { event.preventDefault(); setSelected(null); }}>
-          <button ref={closeButtonRef} className="dialog-close" type="button" onClick={() => setSelected(null)} aria-label="Close explanation">×</button>
+        <dialog ref={dialogRef} className="stage-dialog" tabIndex={-1} aria-labelledby="stage-dialog-title" onCancel={(event) => { event.preventDefault(); setSelected(null); }}>
+          <button className="dialog-close" type="button" onClick={() => setSelected(null)} aria-label="Close explanation">×</button>
           <p className="dialog-label">{selected.name} · OVERVIEW</p>
           <h2 id="stage-dialog-title">{selected.plainTitle}</h2>
           <p className="dialog-explanation">{selected.explanation}</p>
