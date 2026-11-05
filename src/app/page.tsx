@@ -173,7 +173,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <span>Baderin Energies Consulting</span>
+        <span>Baderin Energies Consulting · Org. no. 938 732 078</span>
         <span>Independent technical consultancy · Randaberg, Norway</span>
       </footer>
 
