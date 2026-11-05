@@ -31,10 +31,6 @@ const structuredData = {
 export default function Home() {
   return (
     <>
-      <div className="preview-banner">
-        Preliminary website preview · Company profile and contact details are being reviewed
-      </div>
-
       <header className="site-header">
         <a className="brand" href={sectionHref("top")} aria-label="Baderin Energies Consulting, back to top">
           <span className="brand-symbol" aria-hidden="true"><i /><i /><i /></span>
@@ -67,7 +63,7 @@ export default function Home() {
               project coordination and project management support.
             </p>
             <a className="primary-link" href={sectionHref("services")}>
-              See the preliminary service scope <span aria-hidden="true">↓</span>
+              View services <span aria-hidden="true">↓</span>
             </a>
           </div>
 
@@ -79,19 +75,18 @@ export default function Home() {
               <div><dt>Support</dt><dd>Technical consultancy, coordination and project management</dd></div>
             </dl>
             <p className="status-note">
-              The professional profile, qualifications, detailed services and selected experience
-              are being reviewed before publication.
+              Available for clearly scoped advisory assignments and additional project capacity.
             </p>
           </aside>
         </section>
 
         <section className="services" id="services" aria-labelledby="services-title">
           <div className="section-heading">
-            <p className="section-label">PRELIMINARY SERVICE SCOPE</p>
-            <h2 id="services-title">Defined at a preliminary level.</h2>
+            <p className="section-label">SERVICES</p>
+            <h2 id="services-title">Technical support where projects need added capacity.</h2>
             <p>
-              The final service description will be based on the consultant&apos;s documented background
-              and the types of assignments the business intends to accept.
+              Support can be adapted to a defined work package, a specific project phase or an ongoing
+              coordination need within the client&apos;s organisation.
             </p>
           </div>
 
@@ -105,8 +100,8 @@ export default function Home() {
           </div>
 
           <p className="scope-clarification">
-            References to EPCI describe support within the client&apos;s project phase. They do not imply
-            that the business delivers a complete EPCI contract.
+            Typical assignments may involve technical follow-up, interface coordination, planning,
+            documentation and communication between project participants.
           </p>
         </section>
 
@@ -121,11 +116,11 @@ export default function Home() {
               an independent consultancy based in Randaberg, Norway.
             </p>
             <div className="pending-profile">
-              <h3>Professional profile in preparation</h3>
+              <h3>Direct, independent support</h3>
               <p>
-                A concise account of relevant education, roles, disciplines, project experience and
-                qualifications will be published after the information has been confirmed. No client
-                names, project claims or credentials are presented in this preview.
+                Clients work directly with the consultant. Assignments can be scoped around a defined
+                technical task, coordination responsibility or a need for additional project management
+                capacity.
               </p>
             </div>
           </div>
@@ -166,7 +161,7 @@ export default function Home() {
 
       <footer>
         <span>Baderin Energies Consulting</span>
-        <span>Temporary concept preview</span>
+        <span>Independent technical consultancy · Randaberg, Norway</span>
       </footer>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />

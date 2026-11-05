@@ -19,15 +19,6 @@ h1, h2, h3, p, dl, dd { margin-top: 0; }
 main > section { scroll-margin-top: 104px; }
 ::selection { background: #d9aa90; color: var(--deep); }
 
-.preview-banner {
-  padding: 8px 20px;
-  background: #e3e8e6;
-  color: #384e55;
-  font-size: .72rem;
-  letter-spacing: .035em;
-  text-align: center;
-}
-
 .site-header {
   position: sticky;
   top: 0;

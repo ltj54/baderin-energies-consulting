@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Baderin Energies Consulting – concept preview",
-  description: "Preliminary profile for an independent technical consultancy supporting oil, gas and energy project work.",
+  title: "Baderin Energies Consulting",
+  description: "Independent technical consultancy supporting oil, gas and energy project work.",
   robots: { index: false, follow: false },
 };
 
