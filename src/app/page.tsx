@@ -21,8 +21,12 @@ const structuredData = {
   name: "Baderin Energies Consulting",
   legalName: "BADERIN ENERGIES CONSULTING",
   description: "Independent technical consultancy providing project support for oil, gas and energy work.",
+  email: "RINEnergies@gmail.com",
+  telephone: "+47 97376046",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Skiftesvikveien 25",
+    postalCode: "4072",
     addressLocality: "Randaberg",
     addressCountry: "NO",
   },
@@ -108,12 +112,12 @@ export default function Home() {
         <section className="consultant" id="consultant" aria-labelledby="consultant-title">
           <div>
             <p className="section-label">THE CONSULTANT</p>
-            <h2 id="consultant-title">Adetoyese Ifedayo Baderin</h2>
+            <h2 id="consultant-title">Toyese Baderin</h2>
           </div>
           <div className="consultant-copy">
             <p>
-              Adetoyese Ifedayo Baderin is the registered proprietor of Baderin Energies Consulting,
-              an independent consultancy based in Randaberg, Norway.
+              Toyese Baderin is the consultant behind Baderin Energies Consulting, an independent
+              consultancy based in Randaberg, Norway.
             </p>
             <div className="pending-profile">
               <h3>Direct, independent support</h3>
@@ -130,18 +134,27 @@ export default function Home() {
           <div className="contact-intro">
             <p className="section-label">CONTACT</p>
             <h2 id="contact-title">Contact</h2>
-            <p>
-              The public email address and telephone number will be added after they have been confirmed.
-            </p>
-            <div className="contact-note">
-              <span>CONTACT DETAILS</span>
-              <strong>To be confirmed before launch</strong>
-            </div>
+            <p>Contact Toyese Baderin directly to discuss an assignment or project requirement.</p>
+            <address className="contact-details">
+              <div>
+                <span>Email</span>
+                <a href="mailto:RINEnergies@gmail.com">RINEnergies@gmail.com</a>
+              </div>
+              <div>
+                <span>Telephone</span>
+                <a href="tel:+4797376046">+47 973 76 046</a>
+                <a href="tel:+4790414653">+47 904 14 653</a>
+              </div>
+              <div>
+                <span>Address</span>
+                <p>Skiftesvikveien 25<br />4072 Randaberg, Norway</p>
+              </div>
+            </address>
           </div>
 
           <div className="form-card">
             <h3>Project enquiry</h3>
-            <p>This preview form cannot send messages.</p>
+            <p>Please use the email address or telephone numbers for now.</p>
             <form aria-label="Contact form preview">
               <label htmlFor="name">Your name</label>
               <input id="name" name="name" type="text" placeholder="Your name" autoComplete="name" />
@@ -153,7 +166,7 @@ export default function Home() {
               <textarea id="message" name="message" rows={4} placeholder="Describe the project or question …" />
 
               <button type="button" disabled>Send message</button>
-              <small>The form remains disabled until the recipient and contact service have been approved.</small>
+              <small>Online enquiries are not yet active.</small>
             </form>
           </div>
         </section>
