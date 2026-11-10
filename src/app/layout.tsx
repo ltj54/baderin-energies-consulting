@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Baderin Energies Consulting",
-  description: "Independent technical consultancy supporting oil, gas and energy project work.",
+  description: "Independent oil, gas and energy consultancy led by project lead and installation engineer Toyese Baderin.",
   robots: { index: false, follow: false },
 };
 
