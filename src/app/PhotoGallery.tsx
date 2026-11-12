@@ -7,29 +7,23 @@ type Photo = Readonly<{ src: StaticImageData; alt: string; caption: string }>;
 
 export default function PhotoGallery({ photos }: Readonly<{ photos: readonly Photo[] }>) {
   const [index, setIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
-  const previousOverflow = useRef<string | null>(null);
   const photo = photos[index];
 
-  function restoreScroll() {
-    if (previousOverflow.current !== null) {
-      document.documentElement.style.overflow = previousOverflow.current;
-      previousOverflow.current = null;
-    }
-  }
-
-  useEffect(() => () => {
-    if (previousOverflow.current !== null) {
-      document.documentElement.style.overflow = previousOverflow.current;
-    }
-  }, []);
+  useEffect(() => {
+    if (!isOpen) return;
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    return () => { root.style.overflow = previousOverflow; };
+  }, [isOpen]);
 
   function openPhoto(nextIndex: number, button: HTMLButtonElement) {
     trigger.current = button;
     setIndex(nextIndex);
-    previousOverflow.current = document.documentElement.style.overflow;
-    document.documentElement.style.overflow = "hidden";
+    setIsOpen(true);
     dialog.current?.showModal();
   }
 
@@ -57,7 +51,7 @@ export default function PhotoGallery({ photos }: Readonly<{ photos: readonly Pho
         aria-label="Offshore photo gallery"
         aria-describedby="photo-caption"
         onClose={() => {
-          restoreScroll();
+          setIsOpen(false);
           trigger.current?.focus({ preventScroll: true });
         }}
         onKeyDown={(event) => {
