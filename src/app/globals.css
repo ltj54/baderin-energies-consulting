@@ -12,7 +12,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", Arial, sans-serif; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p, dl, dd { margin-top: 0; }
@@ -34,14 +34,8 @@ main > section { scroll-margin-top: 104px; }
   backdrop-filter: blur(10px);
 }
 
-.brand { display: flex; align-items: center; gap: 13px; font-size: 1rem; line-height: 1.05; letter-spacing: -.03em; }
-.brand strong { font-weight: 700; }
-.brand small { display: block; margin-top: 5px; font-family: "IBM Plex Mono", monospace; font-size: .55rem; letter-spacing: .2em; }
-.brand-symbol { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 37px; height: 37px; padding: 7px; border: 1px solid var(--deep); transform: skew(-8deg); }
-.brand-symbol i { height: 4px; background: var(--deep); }
-.brand-symbol i:first-child { width: 70%; }
-.brand-symbol i:nth-child(2) { width: 100%; }
-.brand-symbol i:last-child { width: 50%; background: var(--accent); }
+.brand { display: flex; align-items: center; flex: none; }
+.brand-logo { display: block; width: 190px; max-width: 100%; height: auto; mix-blend-mode: multiply; }
 
 .header-actions { display: flex; align-items: center; gap: clamp(20px, 3vw, 42px); }
 .site-header nav { display: flex; gap: clamp(18px, 3vw, 38px); font-size: .82rem; font-weight: 700; }
@@ -78,6 +72,8 @@ main > section { scroll-margin-top: 104px; }
 .section-heading { display: grid; grid-template-columns: .65fr 1fr; column-gap: 8vw; }
 .section-heading .section-label { grid-row: 1 / span 2; }
 .section-heading h2, .consultant h2, .contact h2 { margin-bottom: 22px; font-size: clamp(2.2rem, 4vw, 4.5rem); font-weight: 500; line-height: 1.08; letter-spacing: -.055em; }
+.section-heading h2 { font-size: clamp(1.8rem, 2.7vw, 3rem); line-height: 1.2; letter-spacing: -.035em; }
+.services .section-label { color: #e9ab8f; }
 .section-heading > p:last-child { max-width: 720px; margin-bottom: 0; color: #c0cdca; line-height: 1.75; }
 .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 70px; border-top: 1px solid #49616a; border-bottom: 1px solid #49616a; }
 .service-grid article { min-height: 230px; padding: 32px 30px 34px 0; }
@@ -103,10 +99,28 @@ main > section { scroll-margin-top: 104px; }
 .offshore-heading { max-width: 700px; margin-bottom: 36px; }
 .offshore-heading h2 { margin-bottom: 18px; font-size: clamp(2.2rem, 4vw, 4.5rem); font-weight: 500; line-height: 1.08; letter-spacing: -.055em; }
 .offshore-heading > p:last-child { color: var(--muted); line-height: 1.7; }
-.offshore-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 44px); }
-.offshore-gallery figure { min-width: 0; margin: 0; }
+.offshore-gallery { columns: 3; column-gap: clamp(20px, 3vw, 36px); }
+.offshore-gallery figure { min-width: 0; margin: 0 0 32px; break-inside: avoid; }
 .offshore-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
 .offshore-gallery figcaption { padding-top: 14px; color: var(--muted); font-size: .82rem; }
+.gallery-thumbnail { position: relative; display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.gallery-thumbnail:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.gallery-enlarge { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 36px; height: 36px; background: var(--deep); color: white; font-size: 1.4rem; }
+.photo-viewer { width: min(1200px, 96vw); max-width: 96vw; max-height: 96dvh; padding: 18px; border: 1px solid #50656c; background: #10232b; color: var(--white); }
+.photo-viewer::backdrop { background: rgba(5, 14, 19, .9); }
+.viewer-toolbar, .viewer-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.viewer-toolbar { margin-bottom: 16px; }
+.viewer-toolbar > span { color: #ced8d5; font-family: "IBM Plex Mono", monospace; font-size: .65rem; letter-spacing: .1em; }
+.photo-viewer button { flex: none; min-width: 46px; min-height: 46px; padding: 8px 14px; border: 1px solid #82969c; background: transparent; color: white; font: inherit; cursor: pointer; }
+.photo-viewer button:hover { background: #2c4752; }
+.photo-viewer button:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+.viewer-toolbar button span { margin-left: 12px; font-size: 1.3rem; }
+.viewer-image { display: flex; align-items: center; justify-content: center; }
+.viewer-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(96dvh - 180px); object-fit: contain; }
+.viewer-controls { margin-top: 16px; }
+.viewer-controls > button { font-size: 1.5rem; }
+.viewer-controls p { display: grid; gap: 5px; margin: 0; font-size: .88rem; text-align: center; }
+.viewer-controls p > span { color: #ced8d5; font-family: "IBM Plex Mono", monospace; font-size: .7rem; }
 
 .contact { max-width: none; padding-inline: max(calc((100vw - 1500px) / 2 + 4vw), 28px); background: #dbe3e0; }
 .contact-intro > p:not(.section-label) { max-width: 450px; color: var(--muted); line-height: 1.7; }
@@ -126,6 +140,10 @@ main > section { scroll-margin-top: 104px; }
 .form-card small { margin-top: 9px; }
 
 footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px max(4vw, 28px); border-top: 1px solid var(--line); color: var(--muted); font-size: .72rem; }
+
+@media (max-width: 1000px) {
+  .offshore-gallery { columns: 2; }
+}
 
 @media (max-width: 900px) {
   .site-header { align-items: flex-start; }
@@ -150,7 +168,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
   .hero h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); }
   .hero-profile figcaption { padding: 15px 16px; }
   .offshore-work { padding: 0 20px 70px; }
-  .offshore-gallery { grid-template-columns: 1fr; gap: 32px; }
+  .offshore-gallery { columns: 1; }
   .services { padding: 70px 20px; }
   .consultant, .contact { grid-template-columns: 1fr; gap: 25px; padding: 70px 20px; }
   .credentials { grid-template-columns: 1fr; }

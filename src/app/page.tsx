@@ -2,8 +2,27 @@ import Image from "next/image";
 import profilePhoto from "./toyese-baderin.jpeg";
 import installationPhoto from "./offshore-installation.jpeg";
 import offshorePhoto from "./toyese-offshore.jpeg";
+import companyLogo from "./company-logo.png";
+import nightWorkPhoto from "./offshore-night-work.jpeg";
+import liftingPhoto from "./offshore-lifting.jpg";
+import pipelineNightPhoto from "./pipeline-night.jpg";
+import pipelineDayPhoto from "./pipeline-day.jpg";
+import deckLiftingPhoto from "./deck-lifting.jpg";
+import weldingPhoto from "./pipeline-welding.jpg";
+import PhotoGallery from "./PhotoGallery";
 
 const sectionHref = (sectionId: string) => `#${sectionId}`;
+
+const offshoreImages = [
+  { src: installationPhoto, alt: "Offshore crew working with lifting equipment and a pipeline assembly on deck", caption: "Offshore installation work" },
+  { src: nightWorkPhoto, alt: "Toyese Baderin in safety equipment beside offshore machinery at night", caption: "Offshore work at night" },
+  { src: liftingPhoto, alt: "Crane lifting a green pipe assembly beside an offshore vessel", caption: "Lifting operations at sea" },
+  { src: pipelineDayPhoto, alt: "Pipeline extending from a vessel into the sea over a support structure", caption: "Pipeline installation" },
+  { src: offshorePhoto, alt: "Toyese Baderin wearing offshore safety equipment on a vessel deck", caption: "Toyese Baderin offshore" },
+  { src: weldingPhoto, alt: "Crew and welding equipment working on a large pipeline inside a vessel", caption: "Pipeline welding on board" },
+  { src: deckLiftingPhoto, alt: "Crane lifting a load beside a vessel deck with crew and stacked materials", caption: "Deck and lifting operations" },
+  { src: pipelineNightPhoto, alt: "Illuminated pipeline support equipment extending over the sea at night", caption: "Pipeline operations at night" },
+] as const;
 
 const services = [
   {
@@ -48,8 +67,7 @@ export default function Home() {
     <>
       <header className="site-header">
         <a className="brand" href={sectionHref("top")} aria-label="Baderin Energies Consulting, back to top">
-          <span className="brand-symbol" aria-hidden="true"><i /><i /><i /></span>
-          <span>Baderin <strong>Energies</strong><small>CONSULTING</small></span>
+          <Image src={companyLogo} alt="Baderin Energies Consulting" className="brand-logo" loading="eager" />
         </a>
 
         <div className="header-actions">
@@ -99,7 +117,7 @@ export default function Home() {
         <section className="services" id="services" aria-labelledby="services-title">
           <div className="section-heading">
             <p className="section-label">SERVICES</p>
-            <h2 id="services-title">Specialist support from concept to close-out.</h2>
+            <h2 id="services-title">Specialist support from concept development, studies, pre-FEED and FEED through EPCI execution, project management, and final project close-out.</h2>
             <p>
               Support for defined work packages, project phases and coordination needs within the
               client&apos;s organisation.
@@ -167,16 +185,7 @@ export default function Home() {
             <h2 id="offshore-work-title">Engineering in the field.</h2>
             <p>Photographs shared by Toyese Baderin from offshore work environments.</p>
           </div>
-          <div className="offshore-gallery">
-            <figure>
-              <Image src={installationPhoto} alt="Offshore crew working with lifting equipment and a pipeline assembly on deck" sizes="(max-width: 650px) 100vw, 46vw" placeholder="blur" />
-              <figcaption>Offshore installation work</figcaption>
-            </figure>
-            <figure>
-              <Image src={offshorePhoto} alt="Toyese Baderin wearing offshore safety equipment on a vessel deck" sizes="(max-width: 650px) 100vw, 46vw" placeholder="blur" />
-              <figcaption>Toyese Baderin offshore</figcaption>
-            </figure>
-          </div>
+          <PhotoGallery photos={offshoreImages} />
         </section>
 
         <section className="contact" id="contact" aria-labelledby="contact-title">
